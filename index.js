@@ -171,3 +171,39 @@ function clearboard() {
         console.log("clear")
     }
 }
+
+
+
+//dark mode
+var checkbox = document.getElementById("dark-mode")
+checkbox.addEventListener("click", function(event){
+    if(checkbox.checked){
+        document.querySelector("body").style.background = "#1d2a35"
+        document.querySelectorAll("colgroup").forEach(function (ele){
+            ele.style.border = " #dddddd solid medium"
+        })
+        document.querySelectorAll("tbody").forEach(function(ele){
+            ele.style.border = " #dddddd solid medium"
+        })
+        document.querySelectorAll("td").forEach(function(ele){
+            ele.style.border = " #dddddd solid thin"
+        })
+        document.querySelector("table").style.color = "#dddddd"
+        document.querySelector("#nav").style.backgroundColor = "#2f5372"
+    
+    }
+    else{
+        document.querySelector("body").style.removeProperty('background')
+        document.querySelectorAll("colgroup").forEach(function (ele){
+            ele.style.border = "solid medium"
+        })
+        document.querySelectorAll("tbody").forEach(function(ele){
+            ele.style.border = "solid medium"
+        })
+        document.querySelectorAll("td").forEach(function(ele){
+            ele.style.border = "solid thin"
+        })
+        document.querySelector("table").style.color = ""
+        document.querySelector("#nav").style.backgroundColor = "#f0f0f0"
+    }
+})
